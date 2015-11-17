@@ -17,24 +17,24 @@
 		[Parameter(Mandatory=$true)]
 			[string] $Department,		
 
-       [Parameter(Mandatory=$true)]
+       		[Parameter(Mandatory=$true)]
 			[string] $Password,
 
 		[Parameter(Mandatory=$true)]
-					$Mobilephone,
+				$Mobilephone,
 		
 	[Parameter(Mandatory=$true)]
-					$Officenumber
+				$Officenumber
 	)
 
 $DisplayName = $firstname + ' ' + $lastname
 $UserName = $DisplayName
-$UserPrincipalName = $firstname + '.' + $lastname + '@Orneling.se'
+$UserPrincipalName = $firstname + '.' + $lastname + '@Yourdomain.xx'
 $UPN = $UserPrincipalName
 $Mobilephone = $Mobilephone.ToString()
 $Officenumber = $Officenumber.ToString()
 
-$login = Get-AutomationPSCredential -Name 'AzureAdmin'
+$login = Get-AutomationPSCredential -Name 'AzureCredentialwithAdminRights'
 
 Connect-MsolService -Credential $login
 
